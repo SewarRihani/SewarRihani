@@ -43,88 +43,33 @@ EMOJI_FONTS = '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-seri
 
 PROJECTS = [
     dict(key="care", emoji="🐾", name="CareTail Echo", kind="Vet labelling tool · graduation project",
-         line="Veterinarians listen to 1,201 cat and dog recordings and label each one Positive, "
-              "Negative or Unknown. Progress saves to a CSV, so a vet can stop and pick up later.",
-         chips=["Streamlit", "pandas", "1,201 clips", "CSV save + resume"],
-         toast="Clip 318 labelled Positive. Progress saved.",
-         status=["1,201 clips", "3 labels", "saves to CSV"], repo="https://github.com/SewarRihani/OnlineLabelingApp"),
+         short="Vets label 1,201 cat and dog sounds as Positive, Negative or Unknown.",
+         chips=["Streamlit", "pandas", "1,201 clips"], status=["1,201 clips", "3 labels", "saves to CSV"],
+         repo="https://github.com/SewarRihani/OnlineLabelingApp"),
     dict(key="ocd", emoji="🧹", name="OCDAgent", kind="Mac organiser · Python",
-         line="Sorts a messy Mac into colour-coded folders with an emoji on each one. It proves "
-              "duplicates byte by byte before they go, never deletes on its own, and every move can be undone.",
-         chips=["Python", "launchd", "Finder tags", "no dependencies"],
-         toast="Moved 93 items. 0 deleted.",
-         status=["93 moved", "0 deleted", "every move undoable"], soon="Public version coming soon"),
+         short="Tidies a Mac into colour-coded folders and never deletes on its own.",
+         chips=["Python", "launchd", "Finder tags"], status=["93 moved", "0 deleted", "every move undoable"],
+         soon="Public version coming soon"),
     dict(key="chef", emoji="🍳", name="Chefmates", kind="Two-player co-op pixel game",
-         line="Salt and Pepper shrink down and search a giant kitchen for the four parts of a runaway "
-              "mixer: its goal, knowledge, tool and rules. Fix it, and you've learned what an AI agent needs.",
-         chips=["TypeScript", "React", "own canvas engine", "Node"],
-         toast="Found the plug: knowledge. 1 of 4.",
-         status=["2 players", "4 parts", "runs offline"], soon="Code going public soon"),
+         short="A two-player pixel game about the four parts an AI agent needs.",
+         chips=["TypeScript", "React", "own canvas engine"], status=["2 players", "4 parts", "runs offline"],
+         soon="Code going public soon"),
     dict(key="bday", emoji="🎂", name="Birthday Chronicle", kind="Interactive birthday website",
-         line="A 3D cake whose candles you blow out, honey pots that open to kind messages, a photo "
-              "gallery, a timeline with a quiz, a music player, and characters who dance when clicked.",
-         chips=["React", "Three.js", "Framer Motion", "Tailwind"],
-         toast="Candles blown out. Make a wish!",
-         status=["3D cake", "honey pots", "quiz + music"], soon="Public version coming soon"),
+         short="A birthday site with a 3D cake, honey pots, a quiz and music.",
+         chips=["React", "Three.js", "Framer Motion"], status=["3D cake", "honey pots", "quiz + music"],
+         soon="Public version coming soon"),
 ]
 
-CV = {
-    "About": [
-        ("title", "SEWAR ALRIHANI"),
-        ("t", "AI Engineer · Generative AI, RAG & Multi-Agent Systems"),
-        ("s", "Amman, Jordan · Arabic (native) · English (professional)"),
-        ("gap", 8),
-        ("t", "I build RAG systems, multi-agent orchestrators and conversational AI that answer "
-              "from real documents, stay grounded, and work in Arabic and English."),
-        ("gap", 10),
-        ("kpis", [("1 of 20", "fellows picked from 1,000+ applicants"), ("2", "AI engineering roles"),
-                  ("AR + EN", "bilingual AI, both first-class")]),
-        ("gap", 10),
-        ("t", "Focus: grounded, reliable, production-ready AI for sensitive, data-governed settings."),
-        ("gap", 8),
-        ("caret", "> Open to AI engineering roles."),
-    ],
-    "Experience": [
-        ("h", "AI Engineer (Contract)"),
-        ("s", "9XAI Program · Al Hussein Technical University"),
-        ("s", "Mar 2026 – now"),
-        ("b", ["Agents and multi-agent orchestrators with LangGraph and Vertex AI",
-               "Async sub-agents for retrieval, translation and grounding",
-               "Real-time Arabic/English voice assistants",
-               "Modernised back ends and data services behind live dashboards",
-               "Applied ML, NLP and RAG, from prototype to production"]),
-        ("h", "AI / ML Engineer Intern"),
-        ("s", "Acabes International · Sep – Dec 2025"),
-        ("b", ["RAG chatbots and enterprise assistants (LangChain, OpenAI, Python)",
-               "Prompt engineering and evaluation to cut ungrounded answers"]),
-    ],
-    "Education": [
-        ("h", "B.Sc. Artificial Intelligence"),
-        ("s", "The University of Jordan · 2022 – 2026"),
-        ("h", "Graduation project · CareTail Echo"),
-        ("t", "Pet sounds in, species and emotion out (CNNs on Mel-spectrograms), plus a RAG "
-              "vet-care chatbot. Flutter + Python."),
-        ("h", "Also built"),
-        ("b", ["Cardiac image CNN (ResNet50V2), ~91% accuracy", "IoT water monitor · ESP32 + ThingSpeak",
-               "Real-time smart parking · Arduino"]),
-        ("h", "Certificates"),
-        ("t", "MathWorks (Machine Learning, Deep Learning, Image Processing) · Accenture Digital "
-              "Skills: AI · HTU Intro to Python · CCNA fundamentals · Cybersecurity Fundamentals · UI/UX Design"),
-    ],
-    "Skills": [
-        ("stack", [("🐍", "Python"), ("⚡", "FastAPI"), ("🦜", "LangChain"), ("🕸️", "LangGraph"), ("🔥", "PyTorch"),
-                   ("⚛️", "React"), ("🟦", "TypeScript"), ("🐳", "Docker"), ("🦙", "Ollama"), ("🤗", "Hugging Face")]),
-        ("h", "GenAI & agents"),
-        ("t", "LangGraph · LangChain · RAG · multi-agent orchestration · prompt engineering · "
-              "embeddings · OpenAI API · Vertex AI"),
-        ("h", "ML & deep learning"),
-        ("t", "PyTorch · TensorFlow · CNNs · NLP · Librosa · model evaluation"),
-        ("h", "Build"),
-        ("t", "FastAPI · REST APIs · React · Tailwind · Flutter · Git · Google Cloud"),
-        ("h", "Code"),
-        ("t", "Python · SQL · JavaScript · C++ · C# · Java"),
-    ],
-}
+# the CV window: one calm page, no tabs
+CV = dict(
+    name="SEWAR ALRIHANI",
+    title="AI Engineer · Amman, Jordan",
+    kpis=[("1 of 20", "fellows from 1,000+ applicants"), ("2", "AI engineering roles"), ("AR+EN", "bilingual AI")],
+    rows=[("NOW", "AI Engineer (Contract)", "9XAI · HTU · 2026 – now"),
+          ("BEFORE", "AI/ML Engineer Intern", "Acabes International · 2025"),
+          ("STUDIED", "B.Sc. Artificial Intelligence", "University of Jordan · 2022 – 2026")],
+    cta="> Open to AI engineering roles",
+)
 
 # ───────────────────────────── drawing kit ─────────────────────────────
 
@@ -161,7 +106,6 @@ class SVG:
     def __init__(self, w, h, title):
         self.w, self.h, self.title = w, h, title
         self.defs, self.css, self.chars = [], [], set()
-        self.art_delay = 0  # shifts the project pictures' loops so they start when their window opens
 
     def text(self, x, y, s, size, fill=INK, anchor="start", cls="", attrs=""):
         self.chars.update(s)
@@ -184,7 +128,7 @@ class SVG:
                         f".{name}{{animation:{name} {f(period)}s steps(1,end) {f(delay)}s infinite}}")
 
     def art_toggle(self, name, windows):
-        self.toggle(name, ART, windows, self.art_delay)
+        self.toggle(name, ART, windows)
 
     def render(self, body):
         css = "\n".join(self.css)
@@ -234,22 +178,6 @@ def window(s, x, y, w, h, emoji, title, ctl="_□×"):
     return "".join(out), at
 
 
-def explorer_bars(s, x, y, w, name):
-    """Menu bar and address bar of a Project Viewer window."""
-    out, mx = [], x + 10
-    for m in ["File", "Edit", "View", "Favorites", "Help"]:
-        out.append(s.text(mx, y + 49, m, 16) + rect(mx, y + 51, 6.4, 1.2, INK))
-        mx += len(m) * 6.4 + 16
-    bx = x + 8
-    for lab in ["< Back", ">", "^ Up"]:
-        bw = len(lab) * 6.4 + 16
-        out.append(raised(bx, y + 57, bw, 24) + s.text(bx + bw / 2, y + 74, lab, 16, INK, "middle"))
-        bx += bw + 4
-    out.append(sunken(bx + 4, y + 57, x + w - 10 - bx - 4, 24))
-    out.append(s.text(bx + 12, y + 74, f"C:\\Projects\\{name}\\", 16))
-    return "".join(out)
-
-
 def status_bar(s, x, y, w, cells):
     out, cw = [], w / len(cells)
     for i, c in enumerate(cells):
@@ -260,15 +188,14 @@ def status_bar(s, x, y, w, cells):
 # ───────────────────────────── project pictures ─────────────────────────────
 
 
-ART = 8  # each project picture loops in 8 seconds, the time one project gets in the demo
-CLICK = {"care": (3.7, True), "ocd": (2.8, False), "chef": (1.9, True), "bday": (3.3, True)}  # when the demo mouse acts
+ART = 6  # each project picture loops in 6 seconds, the time each project stays on screen
 
 
 def art(s, x, y, w, h, key):
-    """Draws a project's picture at (x, y). Returns it and the spot the demo mouse goes to."""
+    """Draws a project's picture at (x, y)."""
     s.defs.append(f'<clipPath id="clip-{key}"><rect width="{f(w)}" height="{f(h)}"/></clipPath>')
-    inner, (px, py) = {"care": art_care, "ocd": art_ocd, "chef": art_chef, "bday": art_bday}[key](s, w, h)
-    return f'<g transform="translate({f(x)},{f(y)})" clip-path="url(#clip-{key})">{inner}</g>', (x + px, y + py)
+    inner = {"care": art_care, "ocd": art_ocd, "chef": art_chef, "bday": art_bday}[key](s, w, h)
+    return f'<g transform="translate({f(x)},{f(y)})" clip-path="url(#clip-{key})">{inner}</g>'
 
 
 def art_care(s, w, h):
@@ -286,26 +213,25 @@ def art_care(s, w, h):
         bars.append(f"M{f(12 + i * bw + bw * .2)} {f(mid - hh)}h{f(bw * .6)}v{f(2 * hh)}h{f(-bw * .6)}z")
     out.append(f'<path d="{"".join(bars)}" fill="{green}"/>')
     # the played part: a lilac wash that grows behind a playhead
-    d = f(s.art_delay)
-    s.css.append("@keyframes care-grow{0%{transform:scaleX(0)}45%,100%{transform:scaleX(1)}}"
-                 f".care-grow{{transform-box:fill-box;transform-origin:0 50%;animation:care-grow {ART}s linear {d}s infinite}}"
-                 f"@keyframes care-head{{0%{{transform:translateX(0)}}45%,100%{{transform:translateX({f(w - 24)}px)}}}}"
-                 f".care-head{{animation:care-head {ART}s linear {d}s infinite}}")
+    played = f(3.6 / ART * 100)  # the clip plays for 3.6 s
+    s.css.append(f"@keyframes care-grow{{0%{{transform:scaleX(0)}}{played}%,100%{{transform:scaleX(1)}}}}"
+                 f".care-grow{{transform-box:fill-box;transform-origin:0 50%;animation:care-grow {ART}s linear infinite}}"
+                 f"@keyframes care-head{{0%{{transform:translateX(0)}}{played}%,100%{{transform:translateX({f(w - 24)}px)}}}}"
+                 f".care-head{{animation:care-head {ART}s linear infinite}}")
     out.append(f'<rect class="care-grow" x="12" y="{top}" width="{f(w - 24)}" height="{f(bot - top)}" fill="#c8a8ff" opacity=".28"/>')
     out.append(f'<rect class="care-head" x="11" y="{top - 4}" width="2" height="{f(bot - top + 8)}" fill="#c8a8ff" opacity=".9"/>')
     s.art_toggle("care-press", [(3.75, ART)])
-    bx, spot = 12, None
+    bx = 12
     for i, (e, lab) in enumerate([("😊", "Positive"), ("😠", "Negative"), ("❓", "Unknown")]):
         bw_ = 30 + len(lab) * 6.8 + 12
         out.append(raised(bx, h - 44, bw_, 30) + s.emoji(bx + 16, h - 29, e, 15) + s.text(bx + 29, h - 23, lab, 17))
         if i == 0:
             out.append(f'<g class="care-press">{sunken(bx, h - 44, bw_, 30, "#3fc26a")}'
                        f'{s.emoji(bx + 17, h - 28, e, 15)}{s.text(bx + 30, h - 22, lab, 17, "#06170d")}</g>')
-            spot = (bx + bw_ * .6, h - 27)
         bx += bw_ + 8
     if w > 600:
         out.append(s.text(w - 12, h - 23, "progress saved to CSV", 16, green, "end"))
-    return "".join(out), spot
+    return "".join(out)
 
 
 def art_ocd(s, w, h):
@@ -335,7 +261,7 @@ def art_ocd(s, w, h):
                f'{s.text(w - 12 - sw / 2, h - 17, label, 18, WHITE, "middle")}</g>')
     if w > 600:
         out.append(s.text(14, h - 17, "Duplicates are proven byte by byte before anything goes.", 16, SOFT))
-    return "".join(out), (w - 12 - sw * .4, h - 20)
+    return "".join(out)
 
 
 def art_chef(s, w, h):
@@ -386,7 +312,7 @@ def art_chef(s, w, h):
         x += pw + 6
     out.append(f'<g class="chef-none" opacity="0">{s.text(w - 12, 28, "PARTS 0/4", 18, WHITE, "end")}</g>'
                f'<g class="chef-found">{s.text(w - 12, 28, "PARTS 1/4", 18, WHITE, "end")}</g>')
-    return "".join(out), (px + 4, py + 4)
+    return "".join(out)
 
 
 def art_bday(s, w, h):
@@ -428,7 +354,7 @@ def art_bday(s, w, h):
     for x, y, cw, ch in cells:
         out.append(rect(x, y, cw, ch, "#fff", f' opacity=".45" stroke="{plum}" stroke-opacity=".5" stroke-dasharray="4 3"')
                    + s.text(x + cw / 2, y + ch / 2 + 5, "photo", 16, plum, "middle", attrs=' opacity=".7"'))
-    return "".join(out), (cx + 6, base - 46)
+    return "".join(out)
 
 
 # ───────────────────────────── activity ─────────────────────────────
@@ -466,54 +392,6 @@ def activity():
 # ───────────────────────────── the CV window ─────────────────────────────
 
 
-def pane(s, items, x, y, width, max_h, name):
-    out, cy = [], y
-
-    def line(txt, size, fill, indent=0):
-        nonlocal cy
-        out.append(s.text(x + indent, cy + size * .8, txt, size, fill))
-        cy += size * 1.12
-
-    for n, (kind, val) in enumerate(items):
-        if kind == "title":
-            line(val, 26, LILAC)
-        elif kind == "h":
-            cy += 8 if n else 0
-            line(val, 18, LILAC)
-        elif kind in ("t", "s"):
-            for ln in wrap(val, width, 16):
-                line(ln, 16, INK if kind == "t" else SOFT)
-        elif kind == "b":
-            for item in val:
-                for i, ln in enumerate(wrap(item, width - 13, 16)):
-                    line(("• " if i == 0 else "") + ln, 16, INK, 0 if i == 0 else 12.8)
-        elif kind == "gap":
-            cy += val
-        elif kind == "kpis":
-            bw = (width - 16) / 3
-            labels = [wrap(lab, bw - 12, 14) for _, lab in val]
-            bh = 34 + max(map(len, labels)) * 15
-            for i, (v, _) in enumerate(val):
-                bx = x + i * (bw + 8)
-                out.append(groove(bx, cy, bw, bh, "#181128") + s.text(bx + 7, cy + 24, v, 22, MINT))
-                out += [s.text(bx + 7, cy + 42 + k * 15, ln, 14) for k, ln in enumerate(labels[i])]
-            cy += bh
-        elif kind == "stack":
-            cw = width / 5
-            for i, (e, lab) in enumerate(val):
-                cx, ry = x + cw * (i % 5 + .5), cy + (i // 5) * 54
-                out.append(s.emoji(cx, ry + 16, e, 24) + s.text(cx, ry + 45, lab, 13, INK, "middle"))
-            cy += math.ceil(len(val) / 5) * 54 + 4
-        elif kind == "caret":
-            s.css.append("@keyframes caret{50%{opacity:0}}.caret{animation:caret .8s steps(1) infinite}")
-            out.append(s.text(x, cy + 13, val, 16, LILAC)
-                       + rect(x + len(val) * 6.4 + 3, cy + 1, 7, 14, LILAC, ' class="caret"'))
-            cy += 18
-    if cy - y > max_h:
-        raise SystemExit(f"The {name} tab is {cy - y:.0f}px tall; it has {max_h}px.")
-    return "".join(out)
-
-
 def hit(x, y, w, h, attrs):
     """An invisible click target for the live page."""
     return rect(x, y, w, h, "#000", f' fill-opacity="0" tabindex="0" {attrs}')
@@ -524,49 +402,40 @@ def arrow(x, y, color=LILAC):
             f'stroke-linecap="square"/>')
 
 
-def cv_window(s, x, y, w, h, act, live=False):
-    out = [window(s, x, y, w, h, "📄", "Sewar_AlRihani_CV - Profile")[0]]
-    tabs, tx = list(CV), x + 6
-    pane_y, pane_h = y + 60, h - 178
-    for k, tab in enumerate(tabs):
-        tw = len(tab) * 6.8 + 18
-        s.toggle(f"tab{k}", 20, [(5 * k, 5 * k + 5)])
-        out.append(raised(tx, y + 36, tw, 25) + s.text(tx + tw / 2, y + 54, tab, 17, INK, "middle"))
-        out.append(f'<g class="tab{k}"{"" if k == 0 else " opacity=\"0\""}>{raised(tx, y + 33, tw, 29, WELL)}'
-                   f'{rect(tx + 2, y + 58, tw - 4, 6, WELL)}{s.text(tx + tw / 2, y + 53, tab, 17, LILAC, "middle")}</g>')
-        if live:
-            out.append(hit(tx, y + 33, tw, 29, f'class="tabbtn" data-t="{k}" role="tab" aria-label="{tab}"'))
-        tx += tw + 2
-    out.append(sunken(x + 6, pane_y, w - 12, pane_h))
-    for k, tab in enumerate(tabs):
-        body = pane(s, CV[tab], x + 20, pane_y + 14, w - 40, pane_h - 22, tab)
-        out.append(f'<g class="tab{k}"{"" if k == 0 else " opacity=\"0\""}>{body}</g>')
-    # real 2026 activity, one bar per week
-    ay = pane_y + pane_h + 24
-    out.append(s.text(x + 16, ay, f"{YEAR} ACTIVITY", 15, SOFT))
-    out.append(sunken(x + 10, ay + 6, w - 20, 50))
-    n, peak = len(act["weeks"]), max(act["weeks"]) or 1
-    bw = (w - 28) / n
-    for i, c in enumerate(act["weeks"]):
-        bh = max(1.5, c / peak * 40)
-        out.append(rect(x + 14 + i * bw, ay + 52 - bh, max(1, bw - 1.2), bh, "url(#bar)"))
-    out.append(s.text(x + 16, ay + 76, f"{act['total']} contributions · {act['active']} active days · "
-                                        f"busiest day {act['busiest']}", 15, SOFT))
+def cv_window(s, x, y, w, h):
+    out = [window(s, x, y, w, h, "📄", "Sewar_AlRihani_CV")[0], sunken(x + 8, y + 36, w - 16, h - 44)]
+    x0, width, cy = x + 22, w - 44, y + 78
+    out.append(s.text(x0, cy, CV["name"], 34, LILAC) + s.text(x0, cy + 28, CV["title"], 21))
+    cy += 50
+    # three highlights
+    bw = (width - 16) / 3
+    labels = [wrap(lab, bw - 14, 15) for _, lab in CV["kpis"]]
+    bh = 40 + max(map(len, labels)) * 16
+    for i, (v, _) in enumerate(CV["kpis"]):
+        bx = x0 + i * (bw + 8)
+        out.append(groove(bx, cy, bw, bh, "#181128") + s.text(bx + 8, cy + 28, v, 26, MINT))
+        out += [s.text(bx + 8, cy + 48 + k * 16, ln, 15) for k, ln in enumerate(labels[i])]
+    cy += bh + 30
+    # now, before, studied
+    for label, what, where in CV["rows"]:
+        out.append(s.text(x0, cy, label, 15, SOFT) + s.text(x0, cy + 22, what, 20, WHITE) + s.text(x0, cy + 42, where, 17, SOFT))
+        cy += 70
+    cy += 8
+    s.css.append("@keyframes caret{50%{opacity:0}}.caret{animation:caret .8s steps(1) infinite}")
+    out.append(s.text(x0, cy, CV["cta"], 20, LILAC) + rect(x0 + len(CV["cta"]) * 8 + 4, cy - 15, 8, 17, LILAC, ' class="caret"'))
+    if cy > y + h - 20:
+        raise SystemExit(f"The CV window overflows by {cy - (y + h - 20):.0f}px.")
     return "".join(out)
 
 
 # ───────────────────────────── the whole PC ─────────────────────────────
 
-CURSOR = ('<path d="M0 0h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h-5v1h1v1h1v2h1v2h-2v-2h-1v-1h-1v-1h-1v1h-1v1h-1v1h-1z" fill="#000"/>'
-          '<path d="M1 2h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h-4v1h1v2h1v2h-1v-2h-1v-2h-1v-1h-1v1h-1v1h-1z" fill="#fff"/>')
-
 
 def hero(act, live=False):
-    """The whole PC. For the README it plays a demo on its own; `live` makes the clickable page instead."""
-    s = SVG(1000, 750, "SewarOS 98: an old purple PC. My CV window shows my roles, education, skills and "
-                       "real 2026 GitHub activity. " + ("Click a project icon to open its showcase." if live else
-                       "Project windows open one by one: CareTail Echo, OCDAgent, Chefmates and Birthday Chronicle."))
-    SW, SHH = 948, 652
+    """The PC. In the README one project window cycles through the projects; `live` makes them clickable instead."""
+    s = SVG(1000, 700, "SewarOS 98: an old purple PC. My CV window shows my current role, past role, degree and "
+                       "stack, and a project window shows CareTail Echo, OCDAgent, Chefmates and Birthday Chronicle.")
+    SW, SHH = 948, 600
     s.defs.append(
         '<linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241c30"/><stop offset="1" stop-color="#17121f"/></linearGradient>'
         '<linearGradient id="tb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4c22b8"/><stop offset="1" stop-color="#b58cff"/></linearGradient>'
@@ -579,166 +448,84 @@ def hero(act, live=False):
                   f'<stop offset="1" stop-color="{c}" stop-opacity="0"/></radialGradient>'
                   for i, cx, cy, r, c, o in [("w1", .12, .18, .62, "#965fff", .62), ("w2", .88, .24, .6, "#2ecc92", .30),
                                              ("w3", .58, 1.12, .8, "#5476ff", .5), ("w4", .40, .45, .45, "#e66ec8", .18)]))
-    b = ['<rect width="1000" height="750" rx="22" fill="url(#case)"/>', rect(22, 20, SW + 8, SHH + 8, "#2c2a33", ' rx="13"'),
+    b = ['<rect width="1000" height="700" rx="22" fill="url(#case)"/>', rect(22, 20, SW + 8, SHH + 8, "#2c2a33", ' rx="13"'),
          '<g transform="translate(26,24)" clip-path="url(#scr)">', rect(0, 0, SW, SHH, "#120d1e")]
     b += [rect(0, 0, SW, SHH, f"url(#{i})") for i in ("w1", "w2", "w3", "w4", "dots")]
-    hidden = ' style="display:none"'
+    T = ART * len(PROJECTS)  # each project is on screen for one loop of its picture
 
-    # timeline of the demo: every project gets 8 seconds; its window is open from OPEN to CLOSE
-    SEG, OPEN, CLOSE = ART, 1.3, 7.3
-    T = SEG * len(PROJECTS)
-    if not live:
-        s.art_delay = -(SEG - OPEN)  # each picture starts its loop the moment its window opens
-    VX, VY, VW, VH = 118, 14, 450, 586
+    def shown(cls, k, body):
+        """Project k's version of something: clickable on the live page, on a timer in the README."""
+        if live:
+            return f'<g class="{cls}" data-k="{k}"{"" if k == 0 else " style=\"display:none\""}>{body}</g>'
+        s.toggle(f"{cls}{k}", T, [(k * ART, (k + 1) * ART)])
+        return f'<g class="{cls}{k}"{"" if k == 0 else " opacity=\"0\""}>{body}</g>'
 
-    # desktop icons
-    icons = [(p["emoji"], p["name"]) for p in PROJECTS] + [("📦", "More soon"), ("🗑️", "Recycle Bin (empty)")]
-    icon_at = []
-    for k, (e, name) in enumerate(icons):
-        y0, lines = 14 + k * 98, wrap(name, 92, 16)
-        project = k < len(PROJECTS)
-        if project:
-            lw = max(map(len, lines)) * 6.4 + 10
-            ring = rect(58 - lw / 2, y0 + 49, lw, len(lines) * 17 + 5, SEL, ' stroke="#fff" stroke-dasharray="1 2"')
-            if live:
-                b.append(f'<g class="sel" data-k="{k}"{hidden}>{ring}</g>')
-            else:
-                s.toggle(f"sel{k}", T, [(k * SEG + OPEN - .2, k * SEG + CLOSE)])
-                b.append(f'<g class="sel{k}" opacity="{1 if k == 0 else 0}">{ring}</g>')
-        icon = [s.emoji(58, y0 + 24, e, 38)]
+    # desktop icons: the projects only
+    for k, p in enumerate(PROJECTS):
+        y0, lines = 22 + k * 134, wrap(p["name"], 110, 18)
+        lw = max(map(len, lines)) * 7.2 + 12
+        b.append(shown("sel", k, rect(62 - lw / 2, y0 + 57, lw, len(lines) * 19 + 6, SEL, ' stroke="#fff" stroke-dasharray="1 2"')))
+        icon = [s.emoji(62, y0 + 26, p["emoji"], 44)]
         for i, ln in enumerate(lines):
-            icon.append(s.text(59.5, y0 + 64.5 + i * 17, ln, 16, "#000", "middle", attrs=' opacity=".5"')
-                        + s.text(58, y0 + 63 + i * 17, ln, 16, WHITE, "middle"))
-        if live and project:
-            b.append(f'<g class="ic" data-k="{k}" tabindex="0" role="button" aria-label="Open {escape(name)}">'
-                     f'{rect(10, y0 - 4, 96, 58 + len(lines) * 17, "#000", " fill-opacity=\"0\"")}{"".join(icon)}</g>')
+            icon.append(s.text(63.5, y0 + 76.5 + i * 19, ln, 18, "#000", "middle", attrs=' opacity=".5"')
+                        + s.text(62, y0 + 75 + i * 19, ln, 18, WHITE, "middle"))
+        if live:
+            b.append(f'<g class="ic" data-k="{k}" tabindex="0" role="button" aria-label="Open {escape(p["name"])}">'
+                     f'{rect(6, y0 - 4, 112, 66 + len(lines) * 19, "#000", " fill-opacity=\"0\"")}{"".join(icon)}</g>')
         else:
             b += icon
-        icon_at.append((64, y0 + 30))
 
-    b.append(cv_window(s, 578, 10, 360, 598, act, live))
-
-    # the hint that shows while no project is open
-    open_windows = [(k * SEG + OPEN, k * SEG + CLOSE) for k in range(len(PROJECTS))]
-    s.css.append("@keyframes nudge{50%{transform:translateX(-8px)}}.nudge{animation:nudge 1.6s ease-in-out infinite}")
-    hx = VX + VW / 2
-    say = ("Click a project to open it", "Its showcase opens right here") if live else \
-          ("My projects open here", "Open them in the list below")
-    if live:
-        tag = ' id="hint"'
-    else:
-        gaps = [(0, open_windows[0][0])] + [(open_windows[k][1], open_windows[k + 1][0]) for k in range(len(PROJECTS) - 1)] \
-            + [(open_windows[-1][1], T)]
-        s.toggle("hint", T, gaps)
-        tag = ' class="hint" opacity="0"'
-    b.append(f'<g{tag}>{s.emoji(hx, 250, "👈", 48, "nudge")}{s.text(hx, 312, say[0], 24, WHITE, "middle")}'
-             f'{s.text(hx, 338, say[1], 18, SOFT, "middle")}</g>')
-
-    # one Project Viewer and one message box per project
-    close_at = ok_at = None
-    spots = []
-    MX, MY, MW, MH = 150, 372, 250, 112
+    # one project window
+    VX, VY, VW, VH = 130, 16, 440, 536
     for k, p in enumerate(PROJECTS):
-        win, ctl = window(s, VX, VY, VW, VH, p["emoji"], f"{p['name']} - Project Viewer")
-        close_at = ctl["×"]
-        v = [win, explorer_bars(s, VX, VY, VW, p["name"])]
-        mx0, my0, mw, mh = VX + 6, VY + 86, VW - 12, VH - 118
-        v.append(sunken(mx0, my0, mw, mh))
-        ax, ay, aw, ah = mx0 + 12, my0 + 12, mw - 24, 224
-        picture, spot = art(s, ax, ay, aw, ah, p["key"])
-        spots.append(spot)
-        v.append(sunken(ax - 3, ay - 3, aw + 6, ah + 6, "#000") + picture)
-        iy = ay + ah + 18
-        v.append(s.emoji(ax + 20, iy + 18, p["emoji"], 34) + s.text(ax + 48, iy + 25, p["name"], 30, WHITE)
-                 + s.text(ax + 48, iy + 45, p["kind"], 16, SOFT))
-        ty = iy + 78
-        for ln in wrap(p["line"], aw, 17):
-            v.append(s.text(ax, ty, ln, 17))
-            ty += 20
-        ty += 12
-        v += [s.text(ax + (i % 2) * aw / 2, ty + (i // 2) * 22, "• " + c, 17, LILAC) for i, c in enumerate(p["chips"])]
-        v.append(status_bar(s, VX + 6, VY + VH - 27, VW - 12,
-                            [f"{len(PROJECTS)} projects", f"{act['total']} contributions", "0 files deleted"]))
+        v = [window(s, VX, VY, VW, VH, p["emoji"], p["name"], ctl="_□×")[0]]
+        ax, ay, aw, ah = VX + 13, VY + 43, VW - 26, 226 if live else 266  # the live page needs room for its button
+        v.append(sunken(ax - 3, ay - 3, aw + 6, ah + 6, "#000") + art(s, ax, ay, aw, ah, p["key"]))
+        tx, iy = VX + 18, ay + ah + 20
+        v.append(s.emoji(tx + 18, iy + 22, p["emoji"], 38) + s.text(tx + 48, iy + 34, p["name"], 36, WHITE))
+        v.append(s.text(tx, iy + 68, p["kind"], 20, SOFT))
+        for i, ln in enumerate(wrap(p["short"], VW - 36, 22)):
+            v.append(s.text(tx, iy + 106 + i * 26, ln, 22))
+        v.append(s.text(tx, iy + 174, "  ".join("• " + c for c in p["chips"]), 20, LILAC))
         if live:
-            # the button that takes you to the code, or says when it's coming
-            bw_, bx, by = 136, ax + aw - 136, iy + 2
+            bw_, bx, by = 150, VX + VW - 168, VY + VH - 44
             if p.get("repo"):
                 v.append(f'<a href="{p["repo"]}" target="_blank" rel="noopener" aria-label="Open the {p["name"]} repo on GitHub">'
-                         f'{raised(bx, by, bw_, 30, SEL)}{s.text(bx + 14, by + 21, "Open repo", 19, WHITE)}'
-                         f'{arrow(bx + bw_ - 22, by + 15, WHITE)}</a>')
+                         f'{raised(bx, by, bw_, 32, SEL)}{s.text(bx + 16, by + 22, "Open repo", 20, WHITE)}'
+                         f'{arrow(bx + bw_ - 22, by + 16, WHITE)}</a>')
             else:
-                v.append(groove(bx, by, bw_, 30, "#1d1533") + s.text(bx + bw_ / 2, by + 20, "Coming soon", 17, SOFT, "middle"))
-            v.append(hit(close_at[0] - 10, close_at[1] - 9, 20, 18, 'class="x" role="button" aria-label="Close"'))
-            b.append(f'<g class="pv" data-k="{k}"{hidden}>{"".join(v)}</g>')
-        else:
-            s.toggle(f"v{k}", T, [open_windows[k]])
-            b.append(f'<g class="v{k}" opacity="{1 if k == 0 else 0}">{"".join(v)}</g>')
+                v.append(groove(bx, by, bw_, 32, "#1d1533") + s.text(bx + bw_ / 2, by + 21, "Coming soon", 18, SOFT, "middle"))
+        b.append(shown("pv", k, "".join(v)))
 
-        mwin, mctl = window(s, MX, MY, MW, MH, p["emoji"], p["name"], ctl="×")
-        m = [mwin, f'<circle cx="{MX + 30}" cy="{MY + 60}" r="16" fill="{SEL}"/>',
-             s.text(MX + 30, MY + 68, "i", 26, WHITE, "middle")]
-        m += [s.text(MX + 58, MY + 56 + i * 18, ln, 16) for i, ln in enumerate(wrap(p["toast"], MW - 70, 16))]
-        m.append(raised(MX + MW / 2 - 35, MY + MH - 32, 70, 24)
-                 + rect(MX + MW / 2 - 30, MY + MH - 28, 60, 16, "none", f' stroke="{INK}" stroke-dasharray="1 2"')
-                 + s.text(MX + MW / 2, MY + MH - 15, "OK", 17, INK, "middle"))
-        ok_at = (MX + MW / 2, MY + MH - 20)
-        if live:
-            m.append(hit(MX + MW / 2 - 35, MY + MH - 32, 70, 24, 'class="ok" role="button" aria-label="OK"')
-                     + hit(mctl["×"][0] - 10, mctl["×"][1] - 9, 20, 18, 'class="ok" role="button" aria-label="Close message"'))
-            b.append(f'<g class="msg" data-k="{k}"{hidden}>{"".join(m)}</g>')
-        else:
-            s.toggle(f"m{k}", T, [(k * SEG + 5.3, k * SEG + 6.3)])  # after the picture has done its thing
-            b.append(f'<g class="m{k}" opacity="0">{"".join(m)}</g>')
+    b.append(cv_window(s, 582, 16, 356, 536))
 
-    # taskbar: no Start button, just the open windows and a clock
-    b.append(raised(0, 618, SW, 34) + raised(6, 622, 196, 26) + s.emoji(20, 635, "📄", 14)
-             + s.text(32, 640, "Sewar_AlRihani_CV", 16))
+    # taskbar: the CV, the open project, and this year's contributions
+    b.append(raised(0, 566, SW, 34) + raised(6, 570, 214, 26) + s.emoji(21, 583, "📄", 15)
+             + s.text(34, 589, "Sewar_AlRihani_CV", 18))
     for k, p in enumerate(PROJECTS):
-        job = f'{sunken(208, 622, 186, 26, "#342852")}{s.emoji(223, 635, p["emoji"], 14)}{s.text(236, 640, p["name"], 16, WHITE)}'
-        if live:
-            b.append(f'<g class="job" data-k="{k}"{hidden}>{job}</g>')
-        else:
-            s.toggle(f"j{k}", T, [open_windows[k]])
-            b.append(f'<g class="j{k}" opacity="{1 if k == 0 else 0}">{job}</g>')
-    b.append(groove(SW - 118, 622, 112, 26) + s.emoji(SW - 100, 635, "🔊", 13) + s.text(SW - 86, 640, "12:15 PM", 16))
+        b.append(shown("job", k, f'{sunken(226, 570, 214, 26, "#342852")}{s.emoji(241, 583, p["emoji"], 15)}'
+                                 f'{s.text(255, 589, p["name"], 18, WHITE)}'))
+    tray = f"{YEAR}: {act['total']} contributions"
+    tw = len(tray) * 7.2 + 20
+    b.append(groove(SW - 6 - tw, 570, tw, 26) + s.text(SW - 6 - tw / 2, 589, tray, 18, INK, "middle"))
 
-    if not live:
-        # the mouse that shows it all off: double-click the icon, act in the picture, OK the message, close
-        moves, clicks = [(0, close_at)], []
-        for k, p in enumerate(PROJECTS):
-            t0 = k * SEG
-            at, click = CLICK[p["key"]]
-            tc = t0 + OPEN + at
-            moves += [(t0 + .2, close_at), (t0 + 1.0, icon_at[k]), (tc - .9, icon_at[k]), (tc - .1, spots[k]),
-                      (t0 + 5.4, spots[k]), (t0 + 5.95, ok_at), (t0 + 6.4, ok_at), (t0 + 7.0, close_at)]
-            clicks += [t0 + 1.05, t0 + 1.22] + ([tc - .05] if click else []) + [t0 + 6.2, t0 + 7.1]
-        moves.append((T, close_at))
-        assert all(a[0] < b[0] for a, b in zip(moves, moves[1:])), "the mouse's timeline must move forward"
-        frames = "".join(f"{f(t / T * 100)}%{{transform:translate({f(x)}px,{f(y)}px)}}" for t, (x, y) in moves)
-        press = "".join(f"{f(t / T * 100)}%{{transform:scale(.8)}}{f((t + .08) / T * 100)}%{{transform:scale(1)}}" for t in clicks)
-        s.css.append(f"@keyframes cur{{{frames}}}.cur{{animation:cur {T}s steps(10,end) infinite}}"
-                     f"@keyframes press{{0%{{transform:scale(1)}}{press}100%{{transform:scale(1)}}}}"
-                     f".press{{transform-box:fill-box;transform-origin:0 0;animation:press {T}s steps(1,end) infinite}}")
-        b.append(f'<g class="cur" transform="translate({f(close_at[0])},{f(close_at[1])})"><g class="press">'
-                 f'<g transform="scale(1.6)" shape-rendering="crispEdges">{CURSOR}</g></g></g>')
-
-    # scanlines and vignette sit on top; the live page lets clicks pass through them
+    # scanlines and vignette sit on top; clicks pass through them
     b += [rect(0, 0, SW, SHH, "url(#scan)", ' pointer-events="none"'), rect(0, 0, SW, SHH, "url(#vig)", ' pointer-events="none"'), "</g>"]
     # the monitor's chin
-    b.append('<circle cx="46" cy="712" r="10" fill="#b58cff" opacity=".25"/><circle cx="46" cy="712" r="5" fill="#b58cff"/>'
-             + s.text(62, 718, "SewarOS 98", 20, "#8a7fa6")
-             + "".join(rect(880 + i * 30, 708, 22, 9, "#2f2640", ' rx="3"') for i in range(3)))
+    b.append('<circle cx="46" cy="662" r="10" fill="#b58cff" opacity=".25"/><circle cx="46" cy="662" r="5" fill="#b58cff"/>'
+             + s.text(62, 668, "SewarOS 98", 20, "#8a7fa6")
+             + "".join(rect(880 + i * 30, 658, 22, 9, "#2f2640", ' rx="3"') for i in range(3)))
     return s.render("\n".join(b))
 
 
-def project_card(p, act):
-    """A big Project Viewer window for one project, shown when its section is opened in the README."""
+def project_card(p):
+    """A big window for one project, shown when its section is opened in the README."""
     W, H = 1000, 400
     s = SVG(W, H, f"{p['name']}: {p['kind']}")
     s.defs.append('<linearGradient id="tb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4c22b8"/>'
                   '<stop offset="1" stop-color="#b58cff"/></linearGradient>')
-    b = [window(s, 0, 0, W, H, p["emoji"], f"{p['name']} - Project Viewer")[0], explorer_bars(s, 0, 0, W, p["name"])]
-    b.append(sunken(6, 86, W - 12, H - 118, "#000") + art(s, 10, 90, W - 20, H - 126, p["key"])[0])
+    b = [window(s, 0, 0, W, H, p["emoji"], p["name"])[0]]
+    b.append(sunken(6, 36, W - 12, H - 68, "#000") + art(s, 10, 40, W - 20, H - 76, p["key"]))
     b.append(status_bar(s, 6, H - 27, W - 12, p["status"]))
     return s.render("\n".join(b))
 
@@ -749,13 +536,94 @@ def button(label, face=FACE, h=44):
     return s.render(raised(0, 0, w, h, face) + s.text(18, h / 2 + 8, label, 26, WHITE) + arrow(w - 29, h / 2 + 1))
 
 
+# ───────────────────────────── the card at the top ─────────────────────────────
+
+CARD = dict(
+    name="Sewar AlRihani",
+    title="AI Engineer · Amman, Jordan",
+    pitch="I build RAG systems and AI agents that answer from real documents.",
+    tags=[("Open to AI engineering roles", MINT, "#0f2a22"), ("9XAI Fellow · HTU", LILAC, "#241840")],
+    build=[("🤖", "Agents", "Multi-agent systems that plan and act"),
+           ("📚", "RAG", "Answers grounded in real documents"),
+           ("🔊", "Audio ML", "Models that hear pets' emotions"),
+           ("🌐", "Bilingual", "Arabic and English, both first-class")],
+    stack=["Python", "FastAPI", "LangGraph", "LangChain", "PyTorch", "React", "Docker", "Ollama", "Hugging Face"],
+)
+
+
+def card(act):
+    """A calm, easy-to-scan summary that sits above the PC."""
+    W, H, P = 1000, 600, 40
+    s = SVG(W, H, f"{CARD['name']}. {CARD['title']}. {CARD['pitch']} Open to AI engineering roles. 9XAI Fellow at "
+                  f"Al Hussein Technical University. What I build: agents, RAG, audio ML, bilingual Arabic and English AI. "
+                  f"Stack: {', '.join(CARD['stack'])}. {YEAR} on GitHub: {act['total']} contributions over "
+                  f"{act['active']} active days.")
+    s.defs.append('<linearGradient id="cardbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1233"/>'
+                  '<stop offset="1" stop-color="#110b1f"/></linearGradient>'
+                  '<radialGradient id="cardglow" cx=".1" cy="0" r=".7"><stop offset="0" stop-color="#965fff" stop-opacity=".35"/>'
+                  '<stop offset="1" stop-color="#965fff" stop-opacity="0"/></radialGradient>'
+                  '<pattern id="cdots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".7" fill="#fff" opacity=".05"/></pattern>'
+                  '<linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2cfff"/><stop offset="1" stop-color="#8e5ad8"/></linearGradient>')
+    line = f' stroke="{LILAC}" stroke-opacity=".28"'
+    b = [f'<rect width="{W}" height="{H}" rx="20" fill="url(#cardbg)"/>', f'<rect width="{W}" height="{H}" rx="20" fill="url(#cardglow)"/>',
+         f'<rect width="{W}" height="{H}" rx="20" fill="url(#cdots)"/>',
+         f'<rect x=".75" y=".75" width="{W - 1.5}" height="{H - 1.5}" rx="19.5" fill="none"{line} stroke-width="1.5"/>']
+
+    # who I am
+    b.append(s.text(P, 84, CARD["name"], 64, WHITE) + s.text(P, 122, CARD["title"], 28, LILAC)
+             + s.text(P, 160, CARD["pitch"], 22, INK))
+    s.css.append("@keyframes pulse{50%{opacity:.25}}.pulse{animation:pulse 1.6s ease-in-out infinite}")
+    for i, (tag, ink, fill) in enumerate(CARD["tags"]):
+        tw = len(tag) * 8 + (48 if i == 0 else 30)
+        x, y = W - P - tw, 44 + i * 44
+        b.append(rect(x, y, tw, 34, fill, f' rx="17" stroke="{ink}" stroke-opacity=".5"'))
+        if i == 0:
+            b.append(f'<circle class="pulse" cx="{x + 20}" cy="{y + 17}" r="5" fill="{ink}"/>')
+        b.append(s.text(x + (34 if i == 0 else 15), y + 23, tag, 20, ink))
+    b.append(rect(P, 188, W - 2 * P, 1.5, LILAC, ' opacity=".2"'))
+
+    # what I build
+    b.append(s.text(P, 226, "WHAT I BUILD", 18, SOFT, attrs=' letter-spacing="2"'))
+    tw = (W - 2 * P - 3 * 16) / 4
+    for i, (e, name, desc) in enumerate(CARD["build"]):
+        x, y = P + i * (tw + 16), 240
+        b.append(rect(x, y, tw, 118, "#221638", f' rx="12"{line}') + s.emoji(x + 30, y + 34, e, 28)
+                 + s.text(x + 54, y + 43, name, 26, WHITE))
+        b += [s.text(x + 18, y + 78 + k * 22, ln, 19, SOFT) for k, ln in enumerate(wrap(desc, tw - 30, 19))]
+
+    # stack
+    b.append(s.text(P, 400, "STACK", 18, SOFT, attrs=' letter-spacing="2"'))
+    x = P
+    for chip in CARD["stack"]:
+        cw = len(chip) * 8 + 28
+        b.append(rect(x, 414, cw, 36, "#241840", f' rx="8"{line}') + s.text(x + cw / 2, 438, chip, 20, INK, "middle"))
+        x += cw + 10
+    if x - 10 > W - P:
+        raise SystemExit(f"The stack row is {x - 10 - (W - P):.0f}px too wide.")
+
+    # this year
+    b.append(s.text(P, 490, f"{YEAR} ON GITHUB", 18, SOFT, attrs=' letter-spacing="2"'))
+    for i, (num, label) in enumerate([(act["total"], "contributions"), (act["active"], "active days"),
+                                      (act["busiest"], "on my busiest day")]):
+        x = P + i * 158
+        b.append(s.text(x, 542, str(num), 46, MINT) + s.text(x, 568, label, 18, SOFT))
+    cx0, cw_, top, bot = 520, W - P - 520, 500, 566
+    n, peak = len(act["weeks"]), max(act["weeks"]) or 1
+    bw = cw_ / n
+    b += [rect(cx0 + i * bw, bot - max(2, c / peak * (bot - top)), max(1, bw - 2), max(2, c / peak * (bot - top)), "url(#bar)", ' rx="1"')
+          for i, c in enumerate(act["weeks"])]
+    b.append(rect(cx0, bot + 1, cw_, 1, LILAC, ' opacity=".3"') + s.text(cx0, bot + 22, "Jan", 15, SOFT)
+             + s.text(cx0 + cw_, bot + 22, "this week", 15, SOFT, "end"))
+    return s.render("\n".join(b))
+
+
 PAGE = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SewarOS 98 · Sewar AlRihani</title>
-<meta name="description" content="Sewar AlRihani, AI Engineer in Amman, Jordan. Click a project on the old purple PC to open its showcase.">
+<meta name="description" content="Sewar AlRihani, AI Engineer in Amman, Jordan. Click a project on the old purple PC to open it.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💜</text></svg>">
 <style>
   :root { color-scheme: dark; }
@@ -763,16 +631,15 @@ PAGE = """<!doctype html>
          background: radial-gradient(70% 50% at 50% 0%, #2a1650, transparent 70%) #0b0714; }
   main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 32px; }
   .pc { overflow-x: auto; }
-  .pc svg { display: block; width: 100%; height: auto; min-width: 760px; }
-  .ic, .x, .ok, .tabbtn, .pc svg a { cursor: pointer; }
+  .pc svg { display: block; width: 100%; height: auto; min-width: 720px; }
+  .ic, .pc svg a { cursor: pointer; }
   .ic:hover .e { filter: brightness(1.2) drop-shadow(0 0 6px #b58cff); }
-  .ic:focus-visible, .pc svg a:focus-visible, .x:focus-visible, .ok:focus-visible, .tabbtn:focus-visible { outline: 2px dotted #fff; }
+  .ic:focus-visible, .pc svg a:focus-visible { outline: 2px dotted #fff; }
   .pc svg a:hover rect:last-of-type { fill: #9166ff; }
-  .manual .tab0, .manual .tab1, .manual .tab2, .manual .tab3 { animation: none !important; }
   footer { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
   footer a { color: #c9a8ff; }
   .tip { display: none; text-align: center; color: #b8aadb; font-size: 13px; margin: 0 0 10px; }
-  @media (max-width: 760px) { .tip { display: block; } }
+  @media (max-width: 720px) { .tip { display: block; } }
 </style>
 </head>
 <body>
@@ -791,47 +658,19 @@ __SVG__
 const svg = document.querySelector(".pc svg");
 const KEYS = __KEYS__;
 const all = sel => [...svg.querySelectorAll(sel)];
-const hint = svg.querySelector("#hint");
-let current = null, timer = 0;
-
-// show the element for project k in each group, hide the rest (k = -1 hides all)
-function only(sel, k) { all(sel).forEach(el => { el.style.display = el.dataset.k === String(k) ? "" : "none"; }); }
 
 function openProject(k) {
-  current = k;
-  clearTimeout(timer);
-  ["pv", "sel", "job"].forEach(c => only("." + c, k));
-  only(".msg", -1);
+  ["pv", "sel", "job"].forEach(c => all("." + c).forEach(el => { el.style.display = el.dataset.k === String(k) ? "" : "none"; }));
   // play the picture from the start every time its window opens
   const pv = all(".pv").find(el => el.dataset.k === String(k));
   try { pv.getAnimations({ subtree: true }).forEach(a => { a.currentTime = 0; }); } catch (e) {}
-  hint.style.display = "none";
-  timer = setTimeout(() => { if (current === k) only(".msg", k); }, 4300);  // after the picture has done its thing
   history.replaceState(null, "", "#" + KEYS[k]);
 }
 
-function closeProject() {
-  current = null;
-  clearTimeout(timer);
-  ["pv", "sel", "job", "msg"].forEach(c => only("." + c, -1));
-  hint.style.display = "";
-  history.replaceState(null, "", location.pathname);
-}
-
-function onPress(el, fn) {
-  el.addEventListener("click", fn);
-  el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fn(); } });
-}
-
-all(".ic").forEach(el => onPress(el, () => openProject(+el.dataset.k)));
-all(".x").forEach(el => onPress(el, closeProject));
-all(".ok").forEach(el => onPress(el, () => only(".msg", -1)));
-all(".tabbtn").forEach(el => onPress(el, () => {
-  svg.classList.add("manual");  // stop the tabs flipping on their own
-  for (let j = 0; j < 4; j++) all(".tab" + j).forEach(g => g.setAttribute("opacity", j === +el.dataset.t ? 1 : 0));
-}));
-document.addEventListener("keydown", e => { if (e.key === "Escape") closeProject(); });
-
+all(".ic").forEach(el => {
+  el.addEventListener("click", () => openProject(+el.dataset.k));
+  el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openProject(+el.dataset.k); } });
+});
 const start = KEYS.indexOf(location.hash.slice(1));
 if (start >= 0) openProject(start);
 </script>
@@ -844,11 +683,10 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     act = activity()
     print(f"  {YEAR}: {act['total']} contributions, {act['active']} active days, busiest day {act['busiest']}")
-    files = {"assets/sewaros-98.svg": hero(act),
-             "assets/btn-linkedin.svg": button("LinkedIn"), "assets/btn-email.svg": button("Email"),
-             "assets/btn-repo.svg": button("Open repo", SEL)}
+    files = {"assets/card.svg": card(act), "assets/sewaros-98.svg": hero(act), "assets/btn-linkedin.svg": button("LinkedIn"),
+             "assets/btn-email.svg": button("Email"), "assets/btn-repo.svg": button("Open repo", SEL)}
     for p in PROJECTS:
-        files[f"assets/project-{p['key']}.svg"] = project_card(p, act)
+        files[f"assets/project-{p['key']}.svg"] = project_card(p)
     files["docs/index.html"] = PAGE.replace("__SVG__", hero(act, live=True)).replace(
         "__KEYS__", json.dumps([p["key"] for p in PROJECTS]))
     for name, text in files.items():
