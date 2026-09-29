@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="#projects"><img src="assets/card.svg?v=6" width="100%" alt="Sewar AlRihani, AI Engineer in Amman, Jordan. I design and ship production-ready RAG and multi-agent systems, in Arabic and English. Open to AI engineering roles. 9XAI Fellow at HTU. What I build: agents, RAG, audio ML, and bilingual Arabic and English AI. My stack, and my 2026 GitHub activity."></a>
+  <a href="#projects"><img src="assets/card.svg?v=7" width="100%" alt="Sewar AlRihani, AI Engineer in Amman, Jordan. I design and ship production-ready RAG and multi-agent systems, in Arabic and English. Open to AI engineering roles. 9XAI Fellow at HTU. What I build: agents, RAG, audio ML, and bilingual Arabic and English AI. My stack, and my 2026 GitHub activity."></a>
 </p>
 
 <p align="center">

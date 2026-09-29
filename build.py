@@ -385,7 +385,7 @@ def activity():
     weeks = [0] * (((max(days) - sunday).days // 7) + 1)
     for d, c in days.items():
         weeks[(d - sunday).days // 7] += c
-    return dict(weeks=weeks, total=sum(days.values()), active=sum(1 for c in days.values() if c),
+    return dict(weeks=weeks, start=sunday, total=sum(days.values()), active=sum(1 for c in days.values() if c),
                 busiest=max(days.values()))
 
 
@@ -553,7 +553,7 @@ CARD = dict(
 
 def card(act):
     """A calm, easy-to-scan summary that sits above the PC."""
-    W, H, P = 1000, 600, 40
+    W, H, P = 1000, 620, 40
     s = SVG(W, H, f"{CARD['name']}. {CARD['title']}. {CARD['pitch']} Open to AI engineering roles. 9XAI Fellow at "
                   f"Al Hussein Technical University. What I build: agents, RAG, audio ML, bilingual Arabic and English AI. "
                   f"Stack: {', '.join(CARD['stack'])}. {YEAR} on GitHub: {act['total']} contributions over "
@@ -606,14 +606,26 @@ def card(act):
     for i, (num, label) in enumerate([(act["total"], "contributions"), (act["active"], "active days"),
                                       (act["busiest"], "on my busiest day")]):
         x = P + i * 158
-        b.append(s.text(x, 542, str(num), 46, MINT) + s.text(x, 568, label, 18, SOFT))
-    cx0, cw_, top, bot = 520, W - P - 520, 500, 566
-    n, peak = len(act["weeks"]), max(act["weeks"]) or 1
+        b.append(s.text(x, 552, str(num), 46, MINT) + s.text(x, 578, label, 18, SOFT))
+    # contributions per week: one bar a week, months along the bottom, the busiest week labelled
+    cx0, cw_, top, bot = 520, W - P - 520, 522, 580
+    b.append(s.text(cx0, 490, "CONTRIBUTIONS PER WEEK", 18, SOFT, attrs=' letter-spacing="2"'))
+    weeks = act["weeks"]
+    n, peak = len(weeks), max(weeks) or 1
     bw = cw_ / n
-    b += [rect(cx0 + i * bw, bot - max(2, c / peak * (bot - top)), max(1, bw - 2), max(2, c / peak * (bot - top)), "url(#bar)", ' rx="1"')
-          for i, c in enumerate(act["weeks"])]
-    b.append(rect(cx0, bot + 1, cw_, 1, LILAC, ' opacity=".3"') + s.text(cx0, bot + 22, "Jan", 15, SOFT)
-             + s.text(cx0 + cw_, bot + 22, "this week", 15, SOFT, "end"))
+    for i, c in enumerate(weeks):
+        if c:
+            bh = max(3, c / peak * (bot - top))
+            b.append(rect(cx0 + i * bw + .6, bot - bh, max(1, bw - 1.6), bh, "url(#bar)", ' rx="1"'))
+    top_week = weeks.index(peak)
+    b.append(s.text(cx0 + (top_week + .5) * bw, top - 6, str(peak), 16, MINT, "middle"))
+    b.append(rect(cx0, bot, cw_, 1.5, LILAC, ' opacity=".45"'))
+    for m in range(1, 13):
+        i = (date(YEAR, m, 1) - act["start"]).days // 7
+        if i >= n or i * bw + 20 > cw_:  # no room for a month that has only just started
+            break
+        b.append(rect(cx0 + i * bw, bot, 1, 5, LILAC, ' opacity=".45"')
+                 + s.text(cx0 + i * bw + 2, bot + 20, date(YEAR, m, 1).strftime("%b"), 15, SOFT))
     return s.render("\n".join(b))
 
 
