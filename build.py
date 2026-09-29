@@ -623,7 +623,7 @@ def hero(act, live=False):
     s.css.append("@keyframes nudge{50%{transform:translateX(-8px)}}.nudge{animation:nudge 1.6s ease-in-out infinite}")
     hx = VX + VW / 2
     say = ("Click a project to open it", "Its showcase opens right here") if live else \
-          ("My projects open here", "Click this screen to try it")
+          ("My projects open here", "Open them in the list below")
     if live:
         tag = ' id="hint"'
     else:
@@ -844,7 +844,7 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     act = activity()
     print(f"  {YEAR}: {act['total']} contributions, {act['active']} active days, busiest day {act['busiest']}")
-    files = {"assets/sewaros-98.svg": hero(act), "assets/btn-sewaros.svg": button("Open SewarOS 98", SEL),
+    files = {"assets/sewaros-98.svg": hero(act),
              "assets/btn-linkedin.svg": button("LinkedIn"), "assets/btn-email.svg": button("Email"),
              "assets/btn-repo.svg": button("Open repo", SEL)}
     for p in PROJECTS:
