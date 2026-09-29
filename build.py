@@ -541,7 +541,7 @@ def button(label, face=FACE, h=44):
 CARD = dict(
     name="Sewar AlRihani",
     title="AI Engineer · Amman, Jordan",
-    pitch="I build RAG systems and AI agents that answer from real documents.",
+    pitch="I design and ship production-ready RAG and multi-agent systems, in Arabic and English.",
     tags=[("Open to AI engineering roles", MINT, "#0f2a22"), ("9XAI Fellow · HTU", LILAC, "#241840")],
     build=[("🤖", "Agents", "Multi-agent systems that plan and act"),
            ("📚", "RAG", "Answers grounded in real documents"),
