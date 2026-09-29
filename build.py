@@ -703,7 +703,7 @@ def main():
     ASSETS.mkdir(exist_ok=True)
     act = activity()
     print(f"  {YEAR}: {act['total']} contributions, {act['active']} active days, busiest day {act['busiest']}")
-    files = {"sewaros-98.svg": hero(act), "btn-linkedin.svg": button("LinkedIn")}
+    files = {"sewaros-98.svg": hero(act), "btn-linkedin.svg": button("LinkedIn"), "btn-email.svg": button("Email")}
     for p in PROJECTS:
         files[f"project-{p['key']}.svg"] = project_card(p, act)
     for name, svg in files.items():
