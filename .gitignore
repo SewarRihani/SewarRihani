@@ -1,0 +1,8 @@
+.venv/
+.cache/
+__pycache__/
+.DS_Store
+# drafts and references stay local
+PLAN.md
+preview/
+refs/
