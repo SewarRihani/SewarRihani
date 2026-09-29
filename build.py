@@ -200,7 +200,7 @@ def font_b64(chars):
     if not FONT.exists():
         FONT.parent.mkdir(parents=True, exist_ok=True)
         urllib.request.urlretrieve(FONT_URL, FONT)
-    tt = TTFont(FONT)
+    tt = TTFont(FONT, recalcTimestamp=False)  # same bytes every build, so git only sees real changes
     cmap = tt.getBestCmap()
     missing = sorted({c for c in chars if ord(c) not in cmap and not c.isspace()})
     if missing:
@@ -802,6 +802,9 @@ function openProject(k) {
   clearTimeout(timer);
   ["pv", "sel", "job"].forEach(c => only("." + c, k));
   only(".msg", -1);
+  // play the picture from the start every time its window opens
+  const pv = all(".pv").find(el => el.dataset.k === String(k));
+  try { pv.getAnimations({ subtree: true }).forEach(a => { a.currentTime = 0; }); } catch (e) {}
   hint.style.display = "none";
   timer = setTimeout(() => { if (current === k) only(".msg", k); }, 4300);  // after the picture has done its thing
   history.replaceState(null, "", "#" + KEYS[k]);
